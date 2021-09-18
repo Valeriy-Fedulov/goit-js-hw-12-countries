@@ -1,3 +1,9 @@
-// Есть файл fetchCountries.js с дефолтным экспортом функции fetchCountries(searchQuery),
-// возвращающей промис с массивом стран, результат запроса к API
-export function fetchCountries(searchQuery) { }
+export function fetchCountries(searchQuery) {
+  return fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`)
+    .then(response => {
+      if (response.status >= 400) {
+        throw new Error(response.status);
+      }
+      return response.json();
+    })
+};
