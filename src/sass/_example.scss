@@ -19,11 +19,6 @@ body {
   background-repeat: no-repeat;
 }
 
-// .bgbox {
-//   background-color: grey;
-//   // opacity: 0.7;
-// }
-
 .inputbox {
   position: absolute;
   bottom: 10%;
@@ -50,8 +45,15 @@ input:focus {
 
 .countries {
   text-align: center;
+  padding-left: 0;
 }
 
 li {
   list-style-type: none;
+}
+
+.list:hover {
+  border: 2px solid rgb(131, 172, 224);
+  background: rgba(131, 172, 224, 0.7);
+  border-radius: 10px;
 }

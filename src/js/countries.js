@@ -12,6 +12,7 @@ const getCountryRef = document.querySelector(".country");
 const inputListRef = document.querySelector(".inputlist");
 
 inputListRef.addEventListener('input', debounce(onInputSearche, 500));
+listCountriesRef.addEventListener('click', onListSearche);
 
 function onInputSearche(e) {
   listCountriesRef.innerHTML = '';
@@ -48,7 +49,22 @@ function onInputSearche(e) {
     })  
 };
 
-
-
-  
-  
+function onListSearche(e) {
+  listCountriesRef.innerHTML = '';
+  console.dir(e.target.textContent);
+  fetchCountries(e.target.textContent)
+  .then(country => {
+            const markup = country
+            .map((count) => {
+              return templateCountry(count);
+            })
+          getCountryRef.innerHTML = markup;
+          inputListRef.value = "";
+        }
+      )
+    .catch(errors => {
+      error({
+          text: 'Invalid characters entered. Please enter a country name!'
+        });
+    })  
+}

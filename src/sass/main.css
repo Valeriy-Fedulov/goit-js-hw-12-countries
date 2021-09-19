@@ -48,9 +48,16 @@ input:focus {
 
 .countries {
   text-align: center;
+  padding-left: 0;
 }
 
 li {
   list-style-type: none;
+}
+
+.list:hover {
+  border: 2px solid #83ace0;
+  background: rgba(131, 172, 224, 0.7);
+  border-radius: 10px;
 }
 /*# sourceMappingURL=main.css.map */
