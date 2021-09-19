@@ -37,6 +37,7 @@ function onInputSearche(e) {
               return templateCountry(count);
             })
           getCountryRef.innerHTML = markup;
+          e.target.value = "";
         }
       }
     })
