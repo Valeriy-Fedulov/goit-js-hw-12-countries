@@ -17,6 +17,7 @@ listCountriesRef.addEventListener('click', onListSearche);
 function onInputSearche(e) {
   listCountriesRef.innerHTML = '';
   getCountryRef.innerHTML = '';
+  if (e.target.value === "" || e.target.value === " ") return;
   fetchCountries(e.target.value)
     .then(country => {
       defaultStack.close();
